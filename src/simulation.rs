@@ -31,20 +31,25 @@ impl InitCond {
         return dovecote;
     }
 
-    pub fn run_multiple(&mut self, times: usize) -> ([f64; 3], Vec<crate::dovecote::DoveCote>) {
+    pub fn run_multiple(&mut self, times: usize) -> ([f64; 4], Vec<crate::dovecote::DoveCote>) {
         let mut results = Vec::new();
-        let mut averages: [f64; 3] = [0.0; 3];
+        let mut averages: [f64; 4] = [0.0; 4];
+        // let mut empt_funcs = Vec::new();
         for _i in 0..times {
             let dovecote = self.run_sim();
             averages[0] += dovecote.first_collision as f64;
-            averages[1] += dovecote.all_one as f64;
-            averages[2] += dovecote.all_two as f64;
+            averages[1] += dovecote.empty_boxes as f64;
+            averages[2] += dovecote.all_one as f64;
+            averages[3] += dovecote.all_two as f64;
 
+            // empt_funcs.push(dovecote.empty_boxes_fn.clone());
             results.push(dovecote);
         }
         averages[0] /= times as f64;
         averages[1] /= times as f64;
         averages[2] /= times as f64;
+        averages[3] /= times as f64;
+        // let averagefn = revfn::average(empt_funcs);
         return (averages, results);
     }
 }

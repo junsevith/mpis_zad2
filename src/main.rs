@@ -1,8 +1,8 @@
 mod dovecote;
 mod simulation;
-mod revfn;
 
 fn main() {
-    let mut sim = simulation::InitCond::new(1000);
-    println!("{:?}", sim.run_multiple(50).0);
+    let mut sim = simulation::InitCond::new(10000);
+    let res = sim.run_multiple(50);
+    println!("{:?}", res.0);
 }
