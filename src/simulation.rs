@@ -52,4 +52,31 @@ impl InitCond {
         // let averagefn = revfn::average(empt_funcs);
         return (averages, results);
     }
+
+    // pub fn run_sim_optimized(&mut self) -> [usize;4] {
+    //     let dovecote = self.run_sim();
+    //     return [dovecote.first_collision, dovecote.empty_boxes, dovecote.all_one, dovecote.all_two]
+    // }
+    //
+    // pub fn run_multiple_optimized(&mut self, times: usize) -> ([f64; 4], Vec<[usize; 4]>) {
+    //     let mut results = Vec::new();
+    //     let mut averages: [f64; 4] = [0.0; 4];
+    //     // let mut empt_funcs = Vec::new();
+    //     for _i in 0..times {
+    //         let dovecote = self.run_sim_optimized();
+    //         averages[0] += dovecote[0] as f64;
+    //         averages[1] += dovecote[1] as f64;
+    //         averages[2] += dovecote[2] as f64;
+    //         averages[3] += dovecote[3] as f64;
+    //
+    //         // empt_funcs.push(dovecote.empty_boxes_fn.clone());
+    //         results.push(dovecote);
+    //     }
+    //     averages[0] /= times as f64;
+    //     averages[1] /= times as f64;
+    //     averages[2] /= times as f64;
+    //     averages[3] /= times as f64;
+    //     // let averagefn = revfn::average(empt_funcs);
+    //     return (averages, results);
+    // }
 }
