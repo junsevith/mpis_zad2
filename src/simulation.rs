@@ -31,7 +31,7 @@ impl InitCond {
         return dovecote;
     }
 
-    pub fn run_multiple(&mut self, times: usize) -> ([f64; 4], Vec<crate::dovecote::DoveCote>) {
+    pub fn run_multiple(&mut self, times: usize) -> (f64, [f64; 4], Vec<crate::dovecote::DoveCote>) {
         let mut results = Vec::new();
         let mut averages: [f64; 4] = [0.0; 4];
         // let mut empt_funcs = Vec::new();
@@ -50,7 +50,7 @@ impl InitCond {
         averages[2] /= times as f64;
         averages[3] /= times as f64;
         // let averagefn = revfn::average(empt_funcs);
-        return (averages, results);
+        return (self.size as f64, averages, results);
     }
 
     // pub fn run_sim_optimized(&mut self) -> [usize;4] {

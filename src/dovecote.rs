@@ -50,4 +50,16 @@ impl DoveCote {
     pub fn wrap_up(&mut self) {
         self.all_two = self.total_doves;
     }
+
+    pub fn clone(&self) -> Self {
+        return DoveCote {
+            boxes: self.boxes.clone(),
+            total_doves: self.total_doves,
+            first_collision: self.first_collision,
+            empty_boxes: self.empty_boxes,
+            all_one: self.all_one,
+            all_two: self.all_two,
+            // empty_boxes_fn: self.empty_boxes_fn.clone(),
+        };
+    }
 }
