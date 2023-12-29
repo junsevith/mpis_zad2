@@ -29,17 +29,16 @@ impl DoveCote {
         let curr_count = self.boxes[box_num];
 
         if curr_count == 1 {
+            self.all_one += 1;
             if self.total_doves < self.boxes.len() {
                 self.empty_boxes -= 1;
             }
             // self.empty_boxes_fn.set(self.total_doves, self.empty_boxes);
         } else if curr_count == 2 {
-            self.all_one += 1;
+            self.all_two += 1;
             if self.first_collision == 0 {
                 self.first_collision = self.total_doves;
             }
-        } else if curr_count == 3 {
-            self.all_two += 1;
         }
 
         if self.all_one == self.boxes.len(){
